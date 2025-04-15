@@ -1,7 +1,7 @@
 # APIChallenge
 
-# API Name: WeatherServiceAPI  
-**Base URL:** `http://myteam:5000`
+## API Name: WeatherServiceAPI  
+**Base URL:** `http://lynx:5000`
 
 ---
 
@@ -41,7 +41,7 @@
 - **Parameters:**
   - `city` (string): The airport code of the city (e.g., `SBA` or `SMX`)
 - **Response:**
-  - If valid: JSON with wind speed and direction
+  - If valid: JSON with wind speed in mph and direction
   - If invalid: Plain text `"Invalid Request"`
 - **Example:**
   ```json
@@ -58,7 +58,7 @@
 - **Parameters:**
   - `city` (string): The airport code of the city (e.g., `SBA` or `SMX`)
 - **Response:**
-  - If valid: JSON with cloud cover level
+  - If valid: JSON with cloud cover level in oktas
   - If invalid: Plain text `"Invalid Request"`
 - **Example:**
   ```json
