@@ -13,17 +13,17 @@ def getCities():
 @app.route("/temperature/<city>")
 def temperature(city):
     if city == "SBA":
-	return {"tempature": "72"}
+        return {"tempature": "72"}
     elif city == "SMX":
-	return {"tempature": "50"}
+        return {"tempature": "50"}
     else:
-	return "Invalid Request"
+        return "Invalid Request"
 
 @app.route("/wind_speed/<city>")
 def wind_speed(city):
-    if city == "SBA":
+    if city == "SBA": 
         return {"speed": "2.2", "direction": "NW"}
-    elif city == "SMX":
+    elif city == "SMX": 
         return {"speed": "1.5", "direction": "S"}
     else:
         return "Invalid Request"
