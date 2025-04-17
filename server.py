@@ -2,6 +2,16 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
+@app.route("/") 
+def getRoutes(): 
+    output = [] 
+    for rule in app.url_map.iter_rules(): 
+        methods = ','.join(sorted(rule.methods)) 
+        line = f"{rule.endpoint:30s} {methods:20s} {rule}" 
+        output.append(line) 
+    return '<pre>' + '\n'.join(sorted(output)) + '</pre>' 
+
 @app.route("/getcities/")
 def getCities():
     return {"airports": ["sba", "smx"]}
@@ -33,3 +43,5 @@ def cloud_cover(city):
     else:
         return "Invalid Request"
 
+if __name__ == '__main__': 
+    app.run(host='0.0.0.0')
